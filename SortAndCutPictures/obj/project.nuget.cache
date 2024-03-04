@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "OSQphCnpNeJfB5gDkWLfZpxsdyc3H4+Ni+E6eFNX92QbP7O3u3sbQb6+V92vfag3Tv2GljLzRLTBX4rdy+POYA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\focim\\OneDrive\\Moonlight Printed\\Code\\SortAndCutPictures\\SortAndCutPictures\\SortAndCutPictures.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\focim\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\focim\\.nuget\\packages\\system.drawing.common\\8.0.2\\system.drawing.common.8.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

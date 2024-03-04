@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\focim\\OneDrive\\Moonlight Printed\\Code\\SortAndCutPictures\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BC2728E2-6A61-4BD4-BEC7-9A714C0889ED}|SortAndCutPictures\\SortAndCutPictures.csproj|c:\\users\\focim\\onedrive\\moonlight printed\\code\\sortandcutpictures\\sortandcutpictures\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC2728E2-6A61-4BD4-BEC7-9A714C0889ED}|SortAndCutPictures\\SortAndCutPictures.csproj|solutionrelative:sortandcutpictures\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\focim\\OneDrive\\Moonlight Printed\\Code\\SortAndCutPictures\\SortAndCutPictures\\Program.cs",
+              "RelativeDocumentMoniker": "SortAndCutPictures\\Program.cs",
+              "ToolTip": "C:\\Users\\focim\\OneDrive\\Moonlight Printed\\Code\\SortAndCutPictures\\SortAndCutPictures\\Program.cs",
+              "RelativeToolTip": "SortAndCutPictures\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T20:58:22.539Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
