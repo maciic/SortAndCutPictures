@@ -9,13 +9,64 @@ public class SortAndCutPictures
 {
     public static void Main(string[] args)
     {
-        string path = @"C:\Users\focim\OneDrive\Moonlight Printed\Upscaled original\3.png";
-        string savePath = @"C:\Users\focim\OneDrive\Moonlight Printed\Upscaled original";
-        Bitmap image = new Bitmap(path, true);
+        const string targetDir = @"C:\Users\focim\OneDrive\Moonlight Printed\For sale";
+        const string sourceDir = @"C:\Users\focim\OneDrive\Moonlight Printed\Upscaled";
+        int lastImageNumber;
 
-        CutImageToProportion(7, 5, image, savePath);
+        if (Directory.Exists(targetDir) && Directory.Exists(sourceDir))
+        {
+            // This path is a directory
+            lastImageNumber = FindGreatestName(targetDir);
+            CreateAndCopy(targetDir, sourceDir, lastImageNumber);
+        }
+        else
+        {
+            Console.WriteLine("{0} is not a valid file or directory.");
+        }
     }
 
+    public static void CreateAndCopy(string targetDir, string sourceDir, int lastImageNumber)
+    {
+
+        string[] fileEntries = Directory.GetFiles(sourceDir);
+
+        foreach (string fileDir in fileEntries)
+        {
+            lastImageNumber++;
+
+            string newPath = targetDir + "\\" + lastImageNumber.ToString().PadLeft(3, '0');
+            Directory.CreateDirectory(newPath);
+            Directory.CreateDirectory(newPath + "\\Mockup");
+
+            newPath = newPath + "\\Pictures";
+            Directory.CreateDirectory(newPath);
+
+            try
+            {
+                File.Copy(fileDir, newPath + "\\Original.png");
+
+                Bitmap image = new Bitmap(newPath + "\\Original.png", true);
+
+                CutImageToProportion(1, 1, image, newPath);
+                CutImageToProportion(3, 2, image, newPath);
+                CutImageToProportion(4, 3, image, newPath);
+                CutImageToProportion(7, 5, image, newPath);
+                CutImageToProportion(16, 9, image, newPath);
+
+                Console.WriteLine("{0} folder is done...", lastImageNumber.ToString().PadLeft(3, '0'));
+            }
+            catch (IOException iox)
+            {
+                Console.WriteLine("Eror: " + iox.Message);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Function that return the last 3 character of a given path converted to int
+    /// </summary>
+    /// <param name="path">The path name that we want to use</param>
+    /// <returns>Return the last 3 character of the path converted to int</returns>
     public static int FindGreatestName(string path)
     {
         string[] subDir = Directory.GetDirectories(path);
@@ -23,6 +74,14 @@ public class SortAndCutPictures
         return int.Parse(lastInst.Substring(lastInst.Length - 3));
     }
 
+    /// <summary>
+    /// Method to crop a given image to a given proportion using the max possible size of the
+    /// original image.
+    /// </summary>
+    /// <param name="widthProp">The width of the wanted proportion</param>
+    /// <param name="heightProp">The height of the wanted proportion</param>
+    /// <param name="imageToCut">The image that need to be cropped. Previously loaded to Bitmap and that object is given here.</param>
+    /// <param name="savePath">The folder where we want to save the cropped image</param>
     public static void CutImageToProportion(int widthProp, int heightProp, Bitmap imageToCut, string savePath)
     {
         if (imageToCut.Width < imageToCut.Height)
@@ -48,7 +107,6 @@ public class SortAndCutPictures
             System.Drawing.Imaging.PixelFormat format = imageToCut.PixelFormat;
             Bitmap cloneImage = imageToCut.Clone(cloneRect, format);
             cloneImage.Save(savePath + "\\" + heightProp + "x" + widthProp + ".png");
-            Console.WriteLine("Process is done...");
         }
         else
         {
@@ -73,7 +131,6 @@ public class SortAndCutPictures
             System.Drawing.Imaging.PixelFormat format = imageToCut.PixelFormat;
             Bitmap cloneImage = imageToCut.Clone(cloneRect, format);
             cloneImage.Save(savePath + "\\" + widthProp + "x" + heightProp + ".png");
-            Console.WriteLine("Process is done...");
         }
     }
 }

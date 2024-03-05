@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SortAndCutPictures")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20914b6bdb8dd786648f3b91e56707c31148a4c6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75515fad446b07a6b24e9f478cef8d3bf2d11f4a")]
 [assembly: System.Reflection.AssemblyProductAttribute("SortAndCutPictures")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SortAndCutPictures")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
